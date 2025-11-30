@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 public class EmailGeneratorController {
 
     private final EmailGeneratorService emailGeneratorService;
+    public EmailGeneratorController(EmailGeneratorService emailGeneratorService) {
+        this.emailGeneratorService = emailGeneratorService;
+    }
 
     @PostMapping("/generate")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest) {
